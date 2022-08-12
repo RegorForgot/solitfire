@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire", "Solitaire\Soli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire.Logic", "Solitaire.Logic\Solitaire.Logic.csproj", "{15CD79F6-4B39-4051-BC87-F4F2F2E16713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire.Assets", "Solitaire.Assets\Solitaire.Assets.csproj", "{A5C3BE96-899E-4B41-9511-B82F582E7241}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,10 @@
         mc:Ignorable="d"
         Title="Solitaire" Height="450" Width="800">
   <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
     <ListView ItemsSource="{Binding Waste}">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -20,5 +24,14 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    
+    <Image Grid.Row="1">
+      <Image.Source>
+        <MultiBinding StringFormat="Resources/CardAssets/{0}_{1}.png">
+          <Binding Path="Waste[0].Rank"/>
+          <Binding Path="Waste[0].Suit"/>
+        </MultiBinding>
+      </Image.Source>
+    </Image>
   </Grid>
 </Window>
