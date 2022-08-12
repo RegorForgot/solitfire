@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Solitaire.Assets\Solitaire.Assets.csproj" />
       <ProjectReference Include="..\Solitaire.Logic\Solitaire.Logic.csproj" />
     </ItemGroup>
 

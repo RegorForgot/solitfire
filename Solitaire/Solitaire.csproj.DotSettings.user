@@ -1,0 +1,5 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=CARDASSET_002EXAML/@EntryIndexedValue">..\Solitaire.Assets</s:String>
+	
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=CARDASSET_002EXAML/@EntryIndexedValue">CardAsset.xaml</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=SOLITAIRE_002EASSETS_003BCARDASSET_002EXAML/@EntryIndexedValue">Solitaire.Assets;CardAsset.xaml</s:String></wpf:ResourceDictionary>
