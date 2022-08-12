@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire", "Solitaire\Solitaire.csproj", "{D0232B8D-E323-401E-8965-E16E9841287A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire.Logic", "Solitaire.Logic\Solitaire.Logic.csproj", "{15CD79F6-4B39-4051-BC87-F4F2F2E16713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire.Assets", "Solitaire.Assets\Solitaire.Assets.csproj", "{A5C3BE96-899E-4B41-9511-B82F582E7241}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0232B8D-E323-401E-8965-E16E9841287A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0232B8D-E323-401E-8965-E16E9841287A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0232B8D-E323-401E-8965-E16E9841287A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0232B8D-E323-401E-8965-E16E9841287A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CD79F6-4B39-4051-BC87-F4F2F2E16713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C3BE96-899E-4B41-9511-B82F582E7241}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
