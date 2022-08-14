@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using System.ComponentModel;
 
-namespace Solitaire.Logic;
+namespace Solitfire.Logic;
 
 public static class RandomExtensions
 {

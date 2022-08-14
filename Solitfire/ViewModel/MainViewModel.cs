@@ -1,6 +1,6 @@
-﻿using Solitaire.Logic;
+﻿using Solitfire.Logic;
 
-namespace Solitaire.ViewModel;
+namespace Solitfire.ViewModel;
 
 public class MainViewModel : BaseViewModel
 {

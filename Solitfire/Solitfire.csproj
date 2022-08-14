@@ -5,11 +5,11 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
-        <LangVersion>10</LangVersion>
+      <ApplicationIcon>Resources/icon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Solitaire.Logic\Solitaire.Logic.csproj" />
+      <ProjectReference Include="..\Solitfire.Logic\Solitfire.Logic.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -111,6 +111,8 @@
       <Resource Include="Resources\MenuIcons\Restart.png" />
       <None Remove="Resources\MenuIcons\Settings.png" />
       <Resource Include="Resources\MenuIcons\Settings.png" />
+      <None Remove="Resources\icon.ico" />
+      <Resource Include="Resources\icon.ico" />
     </ItemGroup>
 
 </Project>

@@ -1,11 +1,11 @@
-﻿<Window x:Class="Solitaire.MainWindow"
+﻿<Window x:Class="Solitfire.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:v="clr-namespace:Solitaire.View"
+        xmlns:v="clr-namespace:Solitfire.View"
         mc:Ignorable="d"
-        Title="Solitaire" Height="450" Width="800">
+        Title="Solitfire" Height="450" Width="800">
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="32" />
@@ -55,18 +55,27 @@
         </Grid.ColumnDefinitions>
       </Grid>
 
-      <ListView Grid.Row="1" ItemsSource="{Binding Tableau}" BorderThickness="0" Style="{StaticResource TableauView}"
-                MaxWidth="1200">
+      <ListView ItemsSource="{Binding Tableau}" 
+                Style="{StaticResource TableauView}"
+                Width="Auto"
+                MaxWidth="1200"
+                Grid.Row="1" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ListView ItemsSource="{Binding .}" BorderThickness="0" Style="{StaticResource TableauView}">
-              <ListView.ItemTemplate>
-                <DataTemplate>
-                  <v:CardControl Suit="{Binding .Suit}" Rank="{Binding .Rank}" IsFaceUp="{Binding .IsFaceUp}" 
-                                 Height="Auto" Width="Auto" MaxHeight="220"/>
-                </DataTemplate>
-              </ListView.ItemTemplate>
-            </ListView>
+            <Grid Name="CardStack">
+              <ListView ItemsSource="{Binding .}" 
+                        Style="{StaticResource TableauView}"
+                        Width="Auto"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <v:CardControl Suit="{Binding .Suit}" Rank="{Binding .Rank}" IsFaceUp="{Binding .IsFaceUp}" 
+                                   Width="{Binding Path=Width, ElementName=CardStack}" />
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+              </ListView>
+            </Grid>
           </DataTemplate>
         </ListView.ItemTemplate>
 

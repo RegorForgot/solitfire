@@ -1,11 +1,11 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Solitaire.Logic;
+using Solitfire.Logic;
 using static System.Math;
 using static System.Windows.SystemParameters;
 
-namespace Solitaire.View;
+namespace Solitfire.View;
 
 public class CardControl : Control
 {

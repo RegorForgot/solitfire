@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using Solitaire.Logic;
-using Solitaire.ViewModel;
+using Solitfire.Logic;
+using Solitfire.ViewModel;
 
-namespace Solitaire;
+namespace Solitfire;
 
 /// <summary>
 /// Interaction logic for App.xaml

@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire", "Solitaire\Solitaire.csproj", "{D0232B8D-E323-401E-8965-E16E9841287A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitfire", "Solitfire\Solitfire.csproj", "{D0232B8D-E323-401E-8965-E16E9841287A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire.Logic", "Solitaire.Logic\Solitaire.Logic.csproj", "{15CD79F6-4B39-4051-BC87-F4F2F2E16713}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitfire.Logic", "Solitfire.Logic\Solitfire.Logic.csproj", "{15CD79F6-4B39-4051-BC87-F4F2F2E16713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

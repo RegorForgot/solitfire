@@ -5,7 +5,7 @@ using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using static System.String;
 
-namespace Solitaire.Tools;
+namespace Solitfire.Tools;
 
 public class CardImageConverter : IMultiValueConverter
 {

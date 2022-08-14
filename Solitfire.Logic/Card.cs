@@ -1,4 +1,4 @@
-﻿namespace Solitaire.Logic;
+﻿namespace Solitfire.Logic;
 
 public class Card
 {
