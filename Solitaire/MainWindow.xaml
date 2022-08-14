@@ -3,35 +3,79 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="clr-namespace:Solitaire.View"
         mc:Ignorable="d"
         Title="Solitaire" Height="450" Width="800">
   <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition/>
-      <RowDefinition/>
-    </Grid.RowDefinitions>
-    <ListView ItemsSource="{Binding Waste}">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextBlock>
-            <TextBlock.Text>
-              <MultiBinding StringFormat=" {0} - {1}">
-                <Binding Path=".Rank"/>
-                <Binding Path=".Suit"/>
-              </MultiBinding>
-            </TextBlock.Text>
-          </TextBlock>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-    
-    <Image Grid.Row="1">
-      <Image.Source>
-        <MultiBinding StringFormat="Resources/CardAssets/{0}_{1}.png">
-          <Binding Path="Waste[0].Rank"/>
-          <Binding Path="Waste[0].Suit"/>
-        </MultiBinding>
-      </Image.Source>
-    </Image>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="32" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+    <Grid Grid.Column="0"
+          Background="#242d33">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="32" />
+        <RowDefinition Height="32" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="32" />
+      </Grid.RowDefinitions>
+
+      <Image Source="Resources/MenuIcons/Home.png" />
+      <Image Source="Resources/MenuIcons/Restart.png" Grid.Row="1" />
+      <Image Source="Resources/MenuIcons/Profile.png" Grid.Row="2" VerticalAlignment="Bottom" />
+      <Image Source="Resources/MenuIcons/Settings.png" Grid.Row="3" />
+    </Grid>
+
+    <Grid Grid.Column="1" ShowGridLines="True">
+      <Grid.Resources>
+        <Style TargetType="Grid">
+          <Setter Property="Background">
+            <Setter.Value>
+              <RadialGradientBrush GradientOrigin="0.5,0.5"
+                                   Center="0.5,0.5"
+                                   RadiusX="2" RadiusY="2">
+                <RadialGradientBrush.GradientStops>
+                  <GradientStop Color="#1f292e" />
+                  <GradientStop Color="#171c1f" Offset="0.5"></GradientStop>
+                </RadialGradientBrush.GradientStops>
+              </RadialGradientBrush>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Grid.Resources>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="150" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0" ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="250" />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+      </Grid>
+
+      <ListView Grid.Row="1" ItemsSource="{Binding Tableau}" BorderThickness="0" Style="{StaticResource TableauView}"
+                MaxWidth="1200">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ListView ItemsSource="{Binding .}" BorderThickness="0" Style="{StaticResource TableauView}">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <v:CardControl Suit="{Binding .Suit}" Rank="{Binding .Rank}" IsFaceUp="{Binding .IsFaceUp}" 
+                                 Height="Auto" Width="Auto" MaxHeight="220"/>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <ListView.ItemsPanel>
+          <ItemsPanelTemplate>
+            <UniformGrid Columns="7" />
+          </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+      </ListView>
+    </Grid>
   </Grid>
 </Window>

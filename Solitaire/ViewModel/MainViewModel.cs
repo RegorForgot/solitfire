@@ -1,6 +1,6 @@
 ﻿using Solitaire.Logic;
 
-namespace Solitaire.ViewModels;
+namespace Solitaire.ViewModel;
 
 public class MainViewModel : BaseViewModel
 {

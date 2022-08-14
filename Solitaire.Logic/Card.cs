@@ -4,12 +4,12 @@ public class Card
 {
     public Suits Suit { get; }
     public Ranks Rank { get; }
-    public bool Visible { get; set; }
+    public bool IsFaceUp { get; set; }
 
-    public Card(Suits suit, Ranks rank, bool visible)
+    public Card(Suits suit, Ranks rank, bool isFaceUp)
     {
         Suit = suit;
         Rank = rank;
-        Visible = visible;
+        IsFaceUp = isFaceUp;
     }
 }

@@ -13,46 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Resource Include="Resources\CardAssets\10_clubs.png" />
-      <Resource Include="Resources\CardAssets\10_diamonds.png" />
-      <Resource Include="Resources\CardAssets\10_hearts.png" />
-      <Resource Include="Resources\CardAssets\10_spades.png" />
-      <Resource Include="Resources\CardAssets\2_clubs.png" />
-      <Resource Include="Resources\CardAssets\2_diamonds.png" />
-      <Resource Include="Resources\CardAssets\2_hearts.png" />
-      <Resource Include="Resources\CardAssets\2_spades.png" />
-      <Resource Include="Resources\CardAssets\3_clubs.png" />
-      <Resource Include="Resources\CardAssets\3_diamonds.png" />
-      <Resource Include="Resources\CardAssets\3_hearts.png" />
-      <Resource Include="Resources\CardAssets\3_spades.png" />
-      <Resource Include="Resources\CardAssets\4_clubs.png" />
-      <Resource Include="Resources\CardAssets\4_diamonds.png" />
-      <Resource Include="Resources\CardAssets\4_hearts.png" />
-      <Resource Include="Resources\CardAssets\4_spades.png" />
-      <Resource Include="Resources\CardAssets\5_clubs.png" />
-      <Resource Include="Resources\CardAssets\5_diamonds.png" />
-      <Resource Include="Resources\CardAssets\5_hearts.png" />
-      <Resource Include="Resources\CardAssets\5_spades.png" />
-      <Resource Include="Resources\CardAssets\6_clubs.png" />
-      <Resource Include="Resources\CardAssets\6_diamonds.png" />
-      <Resource Include="Resources\CardAssets\6_hearts.png" />
-      <Resource Include="Resources\CardAssets\6_spades.png" />
-      <Resource Include="Resources\CardAssets\7_clubs.png" />
-      <Resource Include="Resources\CardAssets\7_diamonds.png" />
-      <Resource Include="Resources\CardAssets\7_hearts.png" />
-      <Resource Include="Resources\CardAssets\7_spades.png" />
-      <Resource Include="Resources\CardAssets\8_clubs.png" />
-      <Resource Include="Resources\CardAssets\8_diamonds.png" />
-      <Resource Include="Resources\CardAssets\8_hearts.png" />
-      <Resource Include="Resources\CardAssets\8_spades.png" />
-      <Resource Include="Resources\CardAssets\9_clubs.png" />
-      <Resource Include="Resources\CardAssets\9_diamonds.png" />
-      <Resource Include="Resources\CardAssets\9_hearts.png" />
-      <Resource Include="Resources\CardAssets\9_spades.png" />
       <Resource Include="Resources\CardAssets\ace_clubs.png" />
       <Resource Include="Resources\CardAssets\ace_diamonds.png" />
       <Resource Include="Resources\CardAssets\ace_hearts.png" />
@@ -141,6 +101,16 @@
       <Resource Include="Resources\CardAssets\two_hearts.png" />
       <None Remove="Resources\CardAssets\two_spades.png" />
       <Resource Include="Resources\CardAssets\two_spades.png" />
+      <None Remove="Resources\CardAssets\back.png" />
+      <Resource Include="Resources\CardAssets\back.png" />
+      <None Remove="Resources\MenuIcons\Home.png" />
+      <Resource Include="Resources\MenuIcons\Home.png" />
+      <None Remove="Resources\MenuIcons\Profile.png" />
+      <Resource Include="Resources\MenuIcons\Profile.png" />
+      <None Remove="Resources\MenuIcons\Restart.png" />
+      <Resource Include="Resources\MenuIcons\Restart.png" />
+      <None Remove="Resources\MenuIcons\Settings.png" />
+      <Resource Include="Resources\MenuIcons\Settings.png" />
     </ItemGroup>
 
 </Project>

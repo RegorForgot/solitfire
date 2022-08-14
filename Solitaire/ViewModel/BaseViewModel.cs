@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Solitaire.ViewModels;
+namespace Solitaire.ViewModel;
 
 public class BaseViewModel : INotifyPropertyChanged
 {

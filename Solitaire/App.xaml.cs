@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using Solitaire.Logic;
-using Solitaire.ViewModels;
+using Solitaire.ViewModel;
 
 namespace Solitaire;
 

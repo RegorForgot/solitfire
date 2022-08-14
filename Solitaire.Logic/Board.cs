@@ -51,7 +51,7 @@ public class Board
         for (int i = 0; i < 7; i++)
         {
             Tableau[i].AddRange(_cards[count..(count + i + 1)]);
-            Tableau[i][i].Visible = true;
+            Tableau[i][i].IsFaceUp = true;
             count += i + 1;
         }
 
