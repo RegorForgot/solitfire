@@ -4,9 +4,9 @@ namespace Solitfire.ViewModel;
 
 public class MainViewModel : BaseViewModel
 {
-    public ObservableCollectionExtensions<Card>[] Tableau { get; }
-    public ObservableCollectionExtensions<Card>[] Foundation { get; }
-    public ObservableCollectionExtensions<Card> Waste { get; }
+    public CardCollection<Card>[] Tableau { get; }
+    public CardCollection<Card>[] Foundation { get; }
+    public CardCollection<Card> Waste { get; }
 
     public MainViewModel(Board board)
     {

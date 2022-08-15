@@ -27,64 +27,52 @@
       <Image Source="Resources/MenuIcons/Settings.png" Grid.Row="3" />
     </Grid>
 
-    <Grid Grid.Column="1" ShowGridLines="True">
-      <Grid.Resources>
-        <Style TargetType="Grid">
-          <Setter Property="Background">
-            <Setter.Value>
-              <RadialGradientBrush GradientOrigin="0.5,0.5"
-                                   Center="0.5,0.5"
-                                   RadiusX="2" RadiusY="2">
-                <RadialGradientBrush.GradientStops>
-                  <GradientStop Color="#1f292e" />
-                  <GradientStop Color="#171c1f" Offset="0.5"></GradientStop>
-                </RadialGradientBrush.GradientStops>
-              </RadialGradientBrush>
-            </Setter.Value>
-          </Setter>
-        </Style>
-      </Grid.Resources>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="150" />
-        <RowDefinition />
-      </Grid.RowDefinitions>
-      <Grid Grid.Row="0" ShowGridLines="True">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="250" />
-          <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-      </Grid>
-
-      <ListView ItemsSource="{Binding Tableau}" 
-                Style="{StaticResource TableauView}"
+    <Grid Grid.Column="1"
+          Style="{StaticResource PlayingBoard}">
+          <Grid 
+                ShowGridLines="True"
                 Width="Auto"
-                MaxWidth="1200"
-                Grid.Row="1" 
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <Grid Name="CardStack">
-              <ListView ItemsSource="{Binding .}" 
-                        Style="{StaticResource TableauView}"
-                        Width="Auto"
-                        ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <ListView.ItemTemplate>
-                  <DataTemplate>
-                    <v:CardControl Suit="{Binding .Suit}" Rank="{Binding .Rank}" IsFaceUp="{Binding .IsFaceUp}" 
-                                   Width="{Binding Path=Width, ElementName=CardStack}" />
-                  </DataTemplate>
-                </ListView.ItemTemplate>
-              </ListView>
+                MaxWidth="1200">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="300"/>
+              <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" ShowGridLines="True">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
             </Grid>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-
-        <ListView.ItemsPanel>
-          <ItemsPanelTemplate>
-            <UniformGrid Columns="7" />
-          </ItemsPanelTemplate>
-        </ListView.ItemsPanel>
-      </ListView>
+      
+            <ListView ItemsSource="{Binding Tableau}"
+                      Style="{StaticResource TableauView}"
+                      Grid.Row="1"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <Grid Name="Card">
+                    <ListView ItemsSource="{Binding .}"
+                              Style="{StaticResource TableauView}"
+                              Width="Auto"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                      <ListView.ItemTemplate>
+                        <DataTemplate>
+                          <v:CardControl Card="{Binding .}"
+                                         Width="{Binding Path=Width, ElementName=Card}" />
+                        </DataTemplate>
+                      </ListView.ItemTemplate>
+                    </ListView>
+                  </Grid>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+      
+              <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <UniformGrid Columns="7" />
+                </ItemsPanelTemplate>
+              </ListView.ItemsPanel>
+            </ListView>
+          </Grid>
     </Grid>
   </Grid>
 </Window>

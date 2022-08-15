@@ -1,59 +1,25 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Solitfire.Logic;
-using static System.Math;
-using static System.Windows.SystemParameters;
+using Solitfire.Tools;
+using static Solitfire.Tools.VisualTreeHelperExtensions;
 
 namespace Solitfire.View;
 
 public class CardControl : Control
 {
-    #region Dependency Properties
-
-    public readonly static DependencyProperty SuitProperty = DependencyProperty.Register(
-        nameof(Suit),
-        typeof(Suits),
+    public readonly static DependencyProperty CardProperty = DependencyProperty.Register(
+        nameof(Card),
+        typeof(Card),
         typeof(CardControl),
-        new PropertyMetadata(default(Suits)));
+        new PropertyMetadata(default(Card)));
 
-    public Suits Suit
+    public Card Card
     {
-        get => (Suits)GetValue(SuitProperty);
-        set => SetValue(SuitProperty, value);
-    }
-
-    public readonly static DependencyProperty RankProperty = DependencyProperty.Register(
-        nameof(Rank),
-        typeof(Ranks),
-        typeof(CardControl),
-        new PropertyMetadata(default(Ranks)));
-
-    public Ranks Rank
-    {
-        get => (Ranks)GetValue(RankProperty);
-        set => SetValue(RankProperty, value);
-    }
-
-    public readonly static DependencyProperty IsFaceUpProperty = DependencyProperty.Register(
-        nameof(IsFaceUp),
-        typeof(bool),
-        typeof(CardControl),
-        new PropertyMetadata(default(bool))); 
-
-    public bool IsFaceUp
-    {
-        get => (bool)GetValue(IsFaceUpProperty);
-        set => SetValue(IsFaceUpProperty, value);
-    }
-
-    #endregion
-
-    private Point StartPosition { get; set; }
-    public new event MouseEventHandler MouseMove
-    { 
-        add => base.MouseMove += value;
-        remove => base.MouseMove -= value;
+        get => (Card)GetValue(CardProperty);
+        set => SetValue(CardProperty, value);
     }
 
     static CardControl()
@@ -64,32 +30,62 @@ public class CardControl : Control
     public CardControl()
     {
         AllowDrop = true;
-        MouseMove += OnMouseMove;
+        MouseLeftButtonDown += OnPreviewMouseLeftButtonDown;
     }
 
-    protected override void OnMouseUp(MouseButtonEventArgs e)
+    protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
     {
-        IsFaceUp = !IsFaceUp;
+        if (Card.IsTopMost)
+        {
+            Margin = new Thickness(0, 0, 0, 0);
+        } else if (!Card.IsFaceUp)
+        {
+            Margin = new Thickness(0, 0, 0, -9 * ActualHeight / 10);
+        } else
+        {
+            Margin = new Thickness(0, 0, 0, -4 * ActualHeight / 5);
+        }
     }
 
-    protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
+    private void OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
-        StartPosition = e.GetPosition(null);
-    }
+        CardControl cardControl = (CardControl)sender;
+        ListView? stackListView = FindAncestor<ListView>(cardControl);
 
-    private void OnMouseMove(object sender, MouseEventArgs e)
-    {
-        Point currentPosition = e.GetPosition(null);
-        Vector change = StartPosition - currentPosition;
+        ItemCollection? items = stackListView?.Items;
 
-        if (e.LeftButton != MouseButtonState.Pressed ||
-            !(Abs(change.X) > MinimumHorizontalDragDistance) && !(Abs(change.Y) > MinimumVerticalDragDistance) || 
-            sender is not CardControl cardControl)
+        if (!cardControl.Card.IsFaceUp)
         {
             return;
         }
-        
-        DataObject dataObject = new DataObject(cardControl);
-        DragDrop.DoDragDrop(cardControl, dataObject, DragDropEffects.Move);
+
+        bool descendingOrder = true;
+
+        int? index = stackListView?.ItemContainerGenerator.IndexFromItem(cardControl.Card);
+
+        if (items != null && index != null)
+        {
+            for (int i = (int)index + 1; i < items.Count; i++)
+            {
+                Card? firstCard = stackListView?.ItemContainerGenerator.ItemFromIndex<Card>(i - 1);
+                Card? secondCard = stackListView?.ItemContainerGenerator.ItemFromIndex<Card>(i);
+
+                if (firstCard == null || secondCard == null || firstCard.Rank == 1 + secondCard.Rank &&
+                    (int)firstCard.Suit % 2 != (int)secondCard.Rank % 2)
+                {
+                    continue;
+                }
+                descendingOrder = false;
+                break;
+            }
+        }
+
+        if (!descendingOrder)
+        {
+            return;
+        }
+
+        List<Card>? cards = stackListView?.ItemContainerGenerator.ItemsFromIndex<Card>(0, items.Count - 1);
+        MessageBox.Show("true!");
     }
 }

@@ -17,17 +17,18 @@ public static class RandomExtensions
     }
 }
 
-public class ObservableCollectionExtensions<T> : ObservableCollection<T>
+public class CardCollection<T> : ObservableCollection<T>
 {
     public void AddRange(IEnumerable<T> items)
     {
         CheckReentrancy();
+
         foreach (T t in items)
-        { 
+        {
             Items.Add(t);
         }
         OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
-        OnPropertyChanged(new PropertyChangedEventArgs("Count")); 
+        OnPropertyChanged(new PropertyChangedEventArgs("Count"));
         OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
     }
 }

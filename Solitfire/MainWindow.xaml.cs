@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace Solitfire;
+﻿namespace Solitfire;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml

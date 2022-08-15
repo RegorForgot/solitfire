@@ -2,27 +2,27 @@
 
 public class Board
 {
-    public ObservableCollectionExtensions<Card>[] Tableau { get; }
-    public ObservableCollectionExtensions<Card>[] Foundation { get; }
-    public ObservableCollectionExtensions<Card> Waste { get; }
+    public CardCollection<Card>[] Tableau { get; }
+    public CardCollection<Card>[] Foundation { get; }
+    public CardCollection<Card> Waste { get; }
 
     private readonly Card[] _cards = new Card[52];
 
     public Board()
     {
-        Tableau = new ObservableCollectionExtensions<Card>[7];
-        Foundation = new ObservableCollectionExtensions<Card>[4];
-        Waste = new ObservableCollectionExtensions<Card>();
+        Tableau = new CardCollection<Card>[7];
+        Foundation = new CardCollection<Card>[4];
+        Waste = new CardCollection<Card>();
         #region Instantiate Card lists
 
         for (int i = 0; i < Foundation.Length; i++)
         {
-            Foundation[i] = new ObservableCollectionExtensions<Card>();
+            Foundation[i] = new CardCollection<Card>();
         }
 
         for (int i = 0; i < Tableau.Length; i++)
         {
-            Tableau[i] = new ObservableCollectionExtensions<Card>();
+            Tableau[i] = new CardCollection<Card>();
         }
 
         #endregion
@@ -37,7 +37,7 @@ public class Board
         {
             for (int j = 0; j < 13; j++)
             {
-                _cards[j + 13 * i] = new Card((Suits)i, (Ranks)j, false);
+                _cards[j + 13 * i] = new Card((Suits)i, (Ranks)j, false, false);
             }
         }
         Random random = new Random();
@@ -52,6 +52,7 @@ public class Board
         {
             Tableau[i].AddRange(_cards[count..(count + i + 1)]);
             Tableau[i][i].IsFaceUp = true;
+            Tableau[i][i].IsTopMost = true;
             count += i + 1;
         }
 
